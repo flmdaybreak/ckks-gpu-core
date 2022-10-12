@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.18)
 
 if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
-  set(CMAKE_CUDA_ARCHITECTURES 70 72 75 80 86)
+  set(CMAKE_CUDA_ARCHITECTURES 61 70 72 75 80 86)
 endif()
 
 project(DeviceFunctions LANGUAGES CUDA CXX)
@@ -35,6 +35,5 @@ target_compile_options(DeviceFunctions PRIVATE
   $<$<AND:$<COMPILE_LANGUAGE:CUDA>,$<CONFIG:RELWITHDEBINFO>>:-lineinfo>
 )
 
-add_subdirectory(unittest)
 add_subdirectory(thirdparty)
 add_subdirectory(benchmark)

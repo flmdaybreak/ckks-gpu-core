@@ -90,6 +90,10 @@ default_random_engine gen{random_device()()};
 auto GetRandomPolyRNS(int np, const ckks::Parameter& param) {
   const int degree = param.degree_;
   ckks::HostVector poly(np * degree);
+  // std::cout<<"np =  " << np <<std::endl;
+  // std::cout<<"degree = " << degree<<std::endl;
+
+  // std::cout<<"np*degree = " << np * degree<<std::endl;
   for (int prime_idx = 0; prime_idx < np; ++prime_idx) {
     auto prime = param.primes_[prime_idx];
     uniform_int_distribution<uint64_t> dist{0, prime - 1};

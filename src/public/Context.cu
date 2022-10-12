@@ -475,7 +475,7 @@ __device__ uint128_t4 AccumulateInModUp(const word64 *ptr, const int degree,
     const uint64_t op2 = hat_mod_end[hat_mod_end_idx * start_length + i];
     uint128_t4 out;
     // cache streaming?
-    // or, texture?
+    // or, texture? //todo what's meaning 
     uint64_t op1_x, op1_y, op1_z, op1_w;
     asm("{\n\t"
         "ld.global.v2.u64 {%0, %1}, [%2];\n\t"
